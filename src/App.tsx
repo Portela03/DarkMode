@@ -1,11 +1,15 @@
 
 import './App.css'
 import  {useState} from 'react'
-import dark from './styles/theme/light'
+import {ThemeProvider} from 'styled-components'
+
+import dark from './styles/theme/dark'
+import light from './styles/theme/light'
+
 import Header from './components/Header'
 import GlobalStyles from './styles/global'
-import {ThemeProvider} from 'styled-components'
-import light from './styles/theme/light'
+
+
 
 
 
@@ -20,7 +24,7 @@ function App() {
 
   return (
     
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={theme}>
       <div className='App'>
       <GlobalStyles/>
       <Header toggleTheme={toggleTheme}/>

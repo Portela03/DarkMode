@@ -4,7 +4,11 @@ import Switch from 'react-switch';
 import { ThemeContext } from 'styled-components';
 import {shade} from 'polished'
 
-const Header: React.FC = () => {
+interface Props{
+  toggleTheme(): void;
+}
+
+const Header: React.FC<Props> = ({toggleTheme}) => {
   const theme = useContext(ThemeContext);
 
   if (!theme) {
@@ -18,8 +22,8 @@ const Header: React.FC = () => {
         boaa fiote
 
         <Switch
-          onChange={() => {}}
-          checked={true}
+          onChange={toggleTheme}
+          checked={theme.title === 'dark'}
           checkedIcon={false}
           uncheckedIcon={false}
           height={10}
